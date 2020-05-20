@@ -7,7 +7,7 @@ define([
   'use strict';
 
   var module = angular.module('AppAjsRequirejsModule', [
-    'ui.router'
+    lib.RouteIntegrationModule.name
   ]);
 
   module.config(['$stateProvider', function ($stateProvider) {
@@ -21,8 +21,6 @@ define([
       controller: 'ChildController'
     });
   }]);
-
-  console.log(lib);
 
   return module;
 });

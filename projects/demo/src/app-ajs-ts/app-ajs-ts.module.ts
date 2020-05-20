@@ -1,5 +1,6 @@
 
 import '@uirouter/angularjs';
+import * as angular from 'angular';
 
 import { AppAJSTSComponent } from './app-ajs-ts.component';
 import {
@@ -29,7 +30,7 @@ import { downgradeInjectable } from '@angular/upgrade/static';
 export class AppAJSTSModule { }
 
 // get the angularjs module definition
-const appAJSTSModule: any = (AppAJSTSModule as any).module;
+const appAJSTSModule: angular.IModule = (AppAJSTSModule as any).module;
 
 // downgrading Router to be used in the AngularJS application by the RouterLinkDirective
 appAJSTSModule.factory(Router.name, downgradeInjectable(Router) as any);
