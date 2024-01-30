@@ -4,19 +4,18 @@ import { Router } from '@angular/router';
 @AjsDirective({
   restrict: 'A',
   scope: {
-    routerLink: '@'
+    routerLink: '@',
   },
-  dependencies: ['$scope', '$element', Router]
+  dependencies: ['$scope', '$element', Router],
 })
 export class RouterLinkDirective {
-
   navigate = () => {
     this.router.navigate([this.$scope.routerLink]);
-  }
+  };
 
   constructor(
-    private $scope,
-    private $element,
+    private $scope: any,
+    private $element: any,
     private router: Router
   ) {
     this.$element.on('click', this.navigate);

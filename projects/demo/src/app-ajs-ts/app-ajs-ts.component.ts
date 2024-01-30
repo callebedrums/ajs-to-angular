@@ -1,15 +1,15 @@
-import { AjsComponent } from 'projects/ajs-to-angular/src/public-api';
+import { AjsComponent } from 'ajs-to-angular';
+
+import template from './app-ajs-ts.component.html';
 
 @AjsComponent({
   name: 'appAjsTs',
-  template: require('./app-ajs-ts.component.html')
+  template,
 })
 export class AppAJSTSComponent {
-
   date: string;
 
   constructor() {
     this.date = new Date().toString();
   }
-
 }

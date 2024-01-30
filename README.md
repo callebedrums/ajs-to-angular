@@ -6,7 +6,7 @@ It is actually a Angular workspace that contains two projects:
 
 1. ajs-to-angular library
 
-    The main project in the workspace. It contains the library to be puilt and published to an NPM registry
+    The main project in the workspace. It contains the library
 
 2. demo application
 
@@ -15,12 +15,6 @@ It is actually a Angular workspace that contains two projects:
 ## Install
 
 To install this project, first clone its repository to a local repository and then install its dependencies by running `npm install`
-
-To install the library from npm package registry as one of yous application's dependency, use the following command:
-
-```shell
-npm install ajs-to-angular --registry [registry]
-```
 
 ## Development server
 
@@ -35,8 +29,6 @@ Run `npm run build` to build the ajs-to-angular library. The build artifacts wil
 Run `npm test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 Run `npm test:tdd` to execute the unit tests and keep listening for files changes to automatically run the tests again.
-
-The project uses puppeteer dependency to run the tests in the headless chrome, which don't require a grafical interface environment to execute the tests.
 
 ## Consuming the library
 
@@ -103,11 +95,11 @@ The AJS2NGComponent does not now how to and which angularjs application to displ
 
 ### AJSLoaderService Service
 
-In order to load the right application, you have to let AJSLoaderService know how to load the applications. to do that, we configure it by using the *AJSLoaderService.addLoader* method
+In order to load the right application, you have to let AJSLoaderService know how to load the applications. to do that, we configure it by using the _AJSLoaderService.addLoader_ method
 
-The AJSLoaderService.addLoader method receives one argument that can be either a *IAJSLoader* interface implementation or an array of *IAJSLoader* implementations.
+The AJSLoaderService.addLoader method receives one argument that can be either a _IAJSLoader_ interface implementation or an array of _IAJSLoader_ implementations.
 
-The IAJSLoader interface defines two attributes: *test* that is a Regex expresion to be tested agains the current URL route; and *loader* that is a callable that resolves to a *IBootstrapApp* interface.
+The IAJSLoader interface defines two attributes: _test_ that is a Regex expresion to be tested agains the current URL route; and _loader_ that is a callable that resolves to a _IBootstrapApp_ interface.
 
 Consider configure the loaders in the Route Module constructor.
 

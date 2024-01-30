@@ -1,11 +1,12 @@
-import { AjsComponent } from 'projects/ajs-to-angular/src/public-api';
+import { AjsComponent } from 'ajs-to-angular';
+
+import template from './child.component.html';
 
 @AjsComponent({
   name: 'child',
-  template: require('./child.component.html')
+  template,
 })
 export class ChildComponent {
-
   patient = {
     name: 'Davis, Seans',
     id: '123456778',
@@ -14,6 +15,5 @@ export class ChildComponent {
     age: '18',
   };
 
-  constructor() { }
-
+  constructor() {}
 }
