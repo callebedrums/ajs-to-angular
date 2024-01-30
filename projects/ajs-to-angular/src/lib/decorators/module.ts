@@ -1,4 +1,5 @@
-import * as $angular from 'angular'; const angular = $angular;
+import * as $angular from 'angular';
+const angular = $angular;
 
 /**
  *
@@ -28,10 +29,14 @@ interface Definition {
   configs?: any[];
 }
 
-export function AjsModule(definition: Definition): (moduleConstructor: any) => void {
+export function AjsModule(
+  definition: Definition
+): (moduleConstructor: any) => void {
   return (moduleConstructor: any) => {
     const name = moduleConstructor.name;
-    const dependencies = (definition.imports || []).map(m => m.name || m.toString());
+    const dependencies = (definition.imports || []).map(
+      (m) => m.name || m.toString()
+    );
     const providers = definition.providers || [];
     const declarations = definition.declarations || [];
     const configs = definition.configs || [];
@@ -43,9 +48,11 @@ export function AjsModule(definition: Definition): (moduleConstructor: any) => v
     }
 
     for (const declaration of declarations) {
-
       if (declaration.component) {
-        ajsModule.component(declaration.descriptor.name, declaration.descriptor);
+        ajsModule.component(
+          declaration.descriptor.name,
+          declaration.descriptor
+        );
       }
 
       if (declaration.controller) {
@@ -53,9 +60,11 @@ export function AjsModule(definition: Definition): (moduleConstructor: any) => v
       }
 
       if (declaration.directive) {
-        ajsModule.directive(declaration.descriptor.name, () => declaration.descriptor);
+        ajsModule.directive(
+          declaration.descriptor.name,
+          () => declaration.descriptor
+        );
       }
-
     }
 
     for (const config of configs) {

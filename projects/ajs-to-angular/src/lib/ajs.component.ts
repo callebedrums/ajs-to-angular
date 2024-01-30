@@ -4,17 +4,16 @@ import { AJSLoaderService } from './ajs-loader.service';
 
 @Component({
   selector: 'ajs2ng-component',
-  template: '<div ui-view></div>'
+  template: '<div ui-view></div>',
 })
 export class AJS2NGComponent implements OnInit, OnDestroy {
-
-  private route: string;
+  private route: string = '';
 
   constructor(
     private loader: AJSLoaderService,
     private elRef: ElementRef,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.route = this.router.url;
@@ -24,5 +23,4 @@ export class AJS2NGComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.loader.destroy(this.elRef.nativeElement, this.route);
   }
-
 }
